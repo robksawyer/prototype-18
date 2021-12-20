@@ -3,6 +3,7 @@
  */
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import Paper from 'paper';
 
 import styles from './ScenePaperJS.module.css';
 
