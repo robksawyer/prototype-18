@@ -1,17 +1,19 @@
-import React from 'react'
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
-import styles from '../styles/Home.module.css'
+import React from 'react';
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import styles from '../styles/Home.module.css';
 
-const MainScene = dynamic(() => import('@/components/MainScene'), {
-  ssr: false,
-})
-import HamburgerMenu from '@/components/HamburgerMenu'
+// const MainScene = dynamic(() => import('@/components/MainScene'), {
+//   ssr: false,
+// });
+import HamburgerMenu from '@/components/HamburgerMenu';
+import EyeballBasic from '@/components/EyeballBasic';
+
 // import WaveText from '@/components/WaveText'
 
 const CursorCircle = dynamic(() => import('@/components/CursorCircle'), {
   ssr: false,
-})
+});
 
 export default function Home() {
   return (
@@ -24,7 +26,8 @@ export default function Home() {
       </Head>
       <HamburgerMenu />
       <main className={`${styles.main} flex flex-grow flex-col`}>
-        <MainScene />
+        <EyeballBasic />
+        {/* <MainScene /> */}
         {/* <WaveText className="absolute bottom-0 flex items-center justify-center w-screen h-screen pointer-events-none select-none" /> */}
       </main>
 
@@ -35,5 +38,5 @@ export default function Home() {
       </footer>
       <CursorCircle />
     </div>
-  )
+  );
 }
