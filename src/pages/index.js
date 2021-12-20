@@ -7,8 +7,13 @@ import styles from '../styles/Home.module.css';
 //   ssr: false,
 // });
 import HamburgerMenu from '@/components/HamburgerMenu';
-import EyeballBasic from '@/components/EyeballBasic';
+const EyeballBasic = dynamic(() => import('@/components/EyeballBasic'), {
+  ssr: false,
+});
 import YinYang from '@/components/YinYang';
+const RadialRainbows = dynamic(() => import('@/components/RadialRainbows'), {
+  ssr: false,
+});
 
 // import WaveText from '@/components/WaveText'
 
@@ -26,7 +31,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HamburgerMenu />
-      <main className={`${styles.main} flex flex-grow flex-col`}>
+      <main
+        className={`${styles.main} flex flex-grow flex-col items-center justify-center`}
+      >
+        <RadialRainbows />
         <EyeballBasic />
         <YinYang />
         {/* <MainScene /> */}

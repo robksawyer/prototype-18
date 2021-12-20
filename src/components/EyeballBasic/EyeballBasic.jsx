@@ -6,9 +6,8 @@ import PropTypes from 'prop-types';
 
 import styles from './EyeballBasic.module.css';
 
-// import { useMousePosition } from '@/hooks/useMousePosition';
 import { useInterval } from '@/hooks/useInterval';
-import { useLayoutEffect } from '@/hooks/useIsoMorphicLayoutEffect';
+import { useLayoutEffect } from '@/hooks/useIsoLayoutEffect';
 
 const EyeballBasic = ({
   tagName: Tag = 'div',

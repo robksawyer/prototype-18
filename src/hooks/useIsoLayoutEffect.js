@@ -1,11 +1,11 @@
 /**
- * @file useIsomorphicLayoutEffect.js
+ * @file useIsoLayoutEffect.js
  * Hook to suppress useLayoutEffect error on SSR.
  */
 
 import { useLayoutEffect, useEffect } from 'react';
 
-const useIsomorphicLayoutEffect =
+const useIsoLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-export { useIsomorphicLayoutEffect as useLayoutEffect };
+export { useIsoLayoutEffect as useLayoutEffect };
