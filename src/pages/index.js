@@ -46,7 +46,7 @@ export default function Home() {
       >
         Powered by passion
       </footer>
-      <CursorCircle />
+      {/* <CursorCircle /> */}
     </div>
   );
 }

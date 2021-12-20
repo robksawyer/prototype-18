@@ -6,11 +6,11 @@
  * @see https://stackoverflow.com/questions/18551277/using-external-images-for-css-custom-cursors
  * @see https://stackoverflow.com/questions/4773312/custom-cursor-not-working-correctly-in-chrome/16878752
  */
-import * as React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from './CursorCircle.module.css'
-import { useCustomAnimatedCursor } from '@/hooks/useCustomAnimatedCursor'
+import styles from './CursorCircle.module.css';
+import { useCustomAnimatedCursor } from '@/hooks/useCustomAnimatedCursor';
 
 const CursorCircle = ({
   tagName: Tag,
@@ -24,44 +24,44 @@ const CursorCircle = ({
   outerScale = 1,
   innerScale = 0.7,
 }) => {
-  const cursorOuterRef = React.useRef()
-  const cursorInnerRef = React.useRef()
+  const cursorOuterRef = React.useRef();
+  const cursorInnerRef = React.useRef();
 
   const { isActiveClickable, isActive, isVisible } = useCustomAnimatedCursor({
     innerRef: cursorInnerRef,
     outerRef: cursorOuterRef,
-  })
+  });
 
   React.useEffect(() => {
     if (isActive) {
-      cursorInnerRef.current.style.transform = `scale(${innerScale}) translate(-67%, -65%)`
-      cursorOuterRef.current.style.transform = `scale(${outerScale}) translate(-50%, -50%)`
+      cursorInnerRef.current.style.transform = `scale(${innerScale}) translate(-67%, -65%)`;
+      cursorOuterRef.current.style.transform = `scale(${outerScale}) translate(-50%, -50%)`;
     } else {
-      cursorInnerRef.current.style.transform = 'scale(1) translate(-50%, -50%)'
-      cursorOuterRef.current.style.transform = 'scale(1) translate(-50%, -50%)'
+      cursorInnerRef.current.style.transform = 'scale(1) translate(-50%, -50%)';
+      cursorOuterRef.current.style.transform = 'scale(1) translate(-50%, -50%)';
     }
-  }, [innerScale, outerScale, isActive])
+  }, [innerScale, outerScale, isActive]);
 
   React.useEffect(() => {
     if (isActiveClickable) {
       cursorInnerRef.current.style.transform = `scale(${
         innerScale * 1.3
-      }) translate(-50%, -50%)`
+      }) translate(-50%, -50%)`;
       cursorOuterRef.current.style.transform = `scale(${
         outerScale * 1.5
-      }) translate(-50%, -50%)`
+      }) translate(-50%, -50%)`;
     }
-  }, [innerScale, outerScale, isActiveClickable])
+  }, [innerScale, outerScale, isActiveClickable]);
 
   React.useEffect(() => {
     if (isVisible) {
-      cursorInnerRef.current.style.opacity = 1
-      cursorOuterRef.current.style.opacity = 1
+      cursorInnerRef.current.style.opacity = 1;
+      cursorOuterRef.current.style.opacity = 1;
     } else {
-      cursorInnerRef.current.style.opacity = 0
-      cursorOuterRef.current.style.opacity = 0
+      cursorInnerRef.current.style.opacity = 0;
+      cursorOuterRef.current.style.opacity = 0;
     }
-  }, [isVisible])
+  }, [isVisible]);
 
   const styles = {
     cursor: {
@@ -96,7 +96,7 @@ const CursorCircle = ({
       borderColor: cursorColorOuter,
       transition: 'opacity 0.15s ease-in-out, transform 0.15s ease-in-out',
     },
-  }
+  };
 
   return (
     <>
@@ -114,8 +114,8 @@ const CursorCircle = ({
         }
       `}</style>
     </>
-  )
-}
+  );
+};
 
 CursorCircle.propTypes = {
   tagName: PropTypes.string,
@@ -128,6 +128,6 @@ CursorCircle.propTypes = {
   outerSize: PropTypes.number,
   outerScale: PropTypes.number,
   innerScale: PropTypes.number,
-}
+};
 
-export default CursorCircle
+export default CursorCircle;

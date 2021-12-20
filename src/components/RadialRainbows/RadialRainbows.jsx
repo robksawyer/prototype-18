@@ -51,7 +51,9 @@ const RadialRainbows = ({
           gradient: {
             stops: [
               ['white', 0],
-              ['yellow', 0.75],
+              ['white', 0.05],
+              ['white', 0.07],
+              ...colors.splice(0, 5),
               ['black', 0.95],
               ['black', 0.2],
               ['black', 1],
