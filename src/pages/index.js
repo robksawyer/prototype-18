@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css';
 // });
 import HamburgerMenu from '@/components/HamburgerMenu';
 import EyeballBasic from '@/components/EyeballBasic';
+import YinYang from '@/components/YinYang';
 
 // import WaveText from '@/components/WaveText'
 
@@ -27,6 +28,7 @@ export default function Home() {
       <HamburgerMenu />
       <main className={`${styles.main} flex flex-grow flex-col`}>
         <EyeballBasic />
+        <YinYang />
         {/* <MainScene /> */}
         {/* <WaveText className="absolute bottom-0 flex items-center justify-center w-screen h-screen pointer-events-none select-none" /> */}
       </main>
