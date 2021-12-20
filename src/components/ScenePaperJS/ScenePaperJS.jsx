@@ -21,9 +21,8 @@ const ScenePaperJS = ({
   // Setup PaperJS
   useLayoutEffect(() => {
     if (project) {
-      console.log('project', project);
       const { view } = project;
-      console.log('view', view);
+      const { Point, Path } = Paper;
 
       view.onFrame = ({ delta, time, count }) => {
         console.log('tick', count);

@@ -11,12 +11,9 @@ const EyeballBasic = dynamic(() => import('@/components/EyeballBasic'), {
   ssr: false,
 });
 import YinYang from '@/components/YinYang';
-const RoundedRectangles = dynamic(
-  () => import('@/components/RoundedRectangles'),
-  {
-    ssr: false,
-  },
-);
+const Tadpoles = dynamic(() => import('@/components/Tadpoles'), {
+  ssr: false,
+});
 
 // import WaveText from '@/components/WaveText'
 
@@ -37,7 +34,7 @@ export default function Home() {
       <main
         className={`${styles.main} flex flex-grow flex-col items-center justify-center`}
       >
-        <RoundedRectangles />
+        <Tadpoles />
         <EyeballBasic />
         <YinYang />
         {/* <MainScene /> */}
