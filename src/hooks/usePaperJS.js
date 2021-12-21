@@ -9,16 +9,24 @@ import { useLayoutEffect } from '@/hooks/useIsoLayoutEffect';
 /**
  *
  * @param {object} ref is a reference to the PaperJS canvas
+ * @param {function} callback is a drawing function (PaperJS script)
  * @returns
  */
-export const usePaperJS = ({ ref }) => {
+export const usePaperJS = ({ ref, callback }) => {
   const [project, setProject] = React.useState();
+
   useLayoutEffect(() => {
     if (!project && ref && ref.current) {
-      const { Project } = Paper;
-      setProject(new Project(ref.current));
+      const canvas = ref.current;
+
+      Paper.install(window);
+
+      // Setup the canvas
+      Paper.setup(canvas);
+
+      callback();
     }
-  }, [project, ref]);
+  }, [project, callback, ref]);
 
   return project;
 };

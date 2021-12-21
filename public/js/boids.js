@@ -1,7 +1,4 @@
-import Paper from 'paper';
-const { Base, Point, Path, Shape, PaperScript } = Paper;
-
-export const Boid = Base.extend({
+const Boid = Base.extend({
   initialize: function (
     view,
     position,
@@ -13,6 +10,7 @@ export const Boid = Base.extend({
     var strength = Math.random() * 0.5;
     this.acceleration = new Point();
     this.vector = Point.random() * 2 - 1;
+    console.log('this.vector', this.vector);
     this.position = new Point(position).clone();
     this.radius = 30;
     this.maxSpeed = maxSpeed + strength;
