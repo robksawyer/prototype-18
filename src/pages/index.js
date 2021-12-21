@@ -11,6 +11,7 @@ const EyeballBasic = dynamic(() => import('@/components/EyeballBasic'), {
   ssr: false,
 });
 import YinYang from '@/components/YinYang';
+import VinylRecord from '@/components/VinylRecord';
 const RadialRainbows = dynamic(() => import('@/components/RadialRainbows'), {
   ssr: false,
 });
@@ -36,6 +37,7 @@ export default function Home() {
       >
         <RadialRainbows />
         <EyeballBasic />
+        <VinylRecord />
         <YinYang />
         {/* <MainScene /> */}
         {/* <WaveText className="absolute bottom-0 flex items-center justify-center w-screen h-screen pointer-events-none select-none" /> */}
